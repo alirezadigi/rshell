@@ -1507,9 +1507,6 @@ class Device(object):
         QUIET or print('Retrieving root directories ... ', end='', flush=True)
         self.root_dirs = ['/{}/'.format(dir) for dir in self.remote_eval(listdir, '/')]
         QUIET or print(' '.join(self.root_dirs))
-        QUIET or print('Setting time ... ', end='', flush=True)
-        now = self.sync_time()
-        QUIET or print(time.strftime('%b %d, %Y %H:%M:%S', now))
         QUIET or print('Evaluating board_name ... ', end='', flush=True)
         self.name, messages = self.remote_eval_last(board_name, self.default_board_name())
         QUIET or print(self.name)
